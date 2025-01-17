@@ -6,7 +6,7 @@ A Neovim plugin for using Github copilot with advanced integration
 
 ### `:NeoCopilotChat`
 
-This command opens two buffers, one for chat output and one for chat input, split to the side of the current buffer. The chat output buffer is opened on the left side, and the chat input buffer is opened on the right side. The buffers are split vertically, with the chat output buffer taking up 70% of the width and the chat input buffer taking up 30% of the width.
+This command opens two buffers, one for chat output and one for chat input, split below the current buffer. The chat output buffer is opened on the top, and the chat input buffer is opened on the bottom. The buffers are split horizontally, with the chat output buffer taking up 70% of the height and the chat input buffer taking up 30% of the height.
 
 ### Pressing Ctrl + s in the input chat buffer
 
