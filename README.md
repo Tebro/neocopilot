@@ -11,3 +11,16 @@ This command opens two buffers, one for chat output and one for chat input, spli
 ### Pressing Ctrl + s in the input chat buffer
 
 When you write in the input chat buffer and press Ctrl + s, the prompt is sent to Github Copilot, and the response is presented in the top output buffer.
+
+## Installation
+
+To install NeoCopilot using the lazy plugin manager, add the following to your plugin configuration:
+
+```lua
+{
+  "Tebro/neocopilot",
+  config = function()
+    require("neocopilot").setup()
+  end,
+}
+```
