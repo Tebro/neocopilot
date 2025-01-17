@@ -33,6 +33,23 @@ function M.open_chat_buffers()
   vim.cmd("vertical resize 70%")
   vim.cmd("wincmd l")
   vim.cmd("vertical resize 30%")
+  
+  -- Set key mapping for Ctrl + s in the input chat buffer
+  vim.api.nvim_buf_set_keymap(0, "i", "<C-s>", "<cmd>lua require('neocopilot').send_prompt_to_copilot()<CR>", { noremap = true, silent = true })
+end
+
+function M.send_prompt_to_copilot()
+  local input_bufnr = vim.fn.bufnr('%')
+  local input_text = vim.api.nvim_buf_get_lines(input_bufnr, 0, -1, false)
+  local prompt = table.concat(input_text, "\n")
+  
+  local response = utils.get_copilot_response(prompt)
+  
+  -- Get the output buffer number
+  local output_bufnr = vim.fn.bufnr('chat_output')
+  
+  -- Set the response in the output buffer
+  vim.api.nvim_buf_set_lines(output_bufnr, 0, -1, false, vim.split(response, "\n"))
 end
 
 vim.api.nvim_create_user_command("NeoCopilotChat", M.open_chat_buffers, {})
