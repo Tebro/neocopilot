@@ -1,26 +1,11 @@
 # NeoCopilot
 
-A Neovim plugin for using Github copilot with advanced integration
+A Neovim plugin for using Github Copilot in a chat-like interface.
 
-## Ex Commands
+## Features
 
-### `:NeoCopilotChat`
+- Opens two side buffers for interaction with Github Copilot
+- Top buffer shows Copilot responses
+- Bottom buffer for entering prompts
+- Use Ctrl+s to send your prompt to Copilot
 
-This command opens two buffers, one for chat output and one for chat input, split below the current buffer. The chat output buffer is opened on the top, and the chat input buffer is opened on the bottom. The buffers are split horizontally, with the chat output buffer taking up 70% of the height and the chat input buffer taking up 30% of the height.
-
-### Pressing Ctrl + s in the input chat buffer
-
-When you write in the input chat buffer and press Ctrl + s, the prompt is sent to Github Copilot, and the response is presented in the top output buffer.
-
-## Installation
-
-To install NeoCopilot using the lazy plugin manager, add the following to your plugin configuration:
-
-```lua
-{
-  "Tebro/neocopilot",
-  config = function()
-    require("neocopilot").setup()
-  end,
-}
-```
