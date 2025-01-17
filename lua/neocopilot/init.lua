@@ -5,6 +5,7 @@ local utils = require("neocopilot.utils")
 
 function M.setup(user_config)
   config.update(user_config)
+  config.install_lazy_plugin_manager()
   -- Additional setup code can be added here
 end
 
